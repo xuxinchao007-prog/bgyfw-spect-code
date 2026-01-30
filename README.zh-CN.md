@@ -1,6 +1,6 @@
-# Everything Claude Code
+# BGYFW Spect Code
 
-[![Stars](https://img.shields.io/github/stars/affaan-m/everything-claude-code?style=flat)](https://github.com/affaan-m/everything-claude-code/stargazers)
+[![Stars](https://img.shields.io/github/stars/xuxinchao007-prog/bgyfw-spect-code?style=flat)](https://github.com/xuxinchao007-prog/bgyfw-spect-code/stargazers)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 ![Shell](https://img.shields.io/badge/-Shell-4EAA25?logo=gnu-bash&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?logo=typescript&logoColor=white)
@@ -12,9 +12,9 @@
   <span>简体中文</span>
 </p>
 
-**来自 Anthropic 黑客马拉松获胜者的完整 Claude Code 配置集合。**
+**来自 Anthropic 黑客马拉松获胜者的完整 Claude Code 配置集合 - 现已扩展包含27个专业代理。**
 
-生产级代理、技能、钩子、命令、规则和 MCP 配置，经过 10 多个月构建真实产品的密集日常使用而演化。
+生产级代理、技能、钩子、命令、规则和 MCP 配置，包括 Java、Python、JavaScript、Vue 的语言特定审查员以及 PostgreSQL、MySQL、MongoDB、Oracle、SQL Server 的数据库专家。
 
 ---
 
@@ -25,13 +25,13 @@
 <table>
 <tr>
 <td width="50%">
-<a href="https://x.com/affaanmustafa/status/2012378465664745795">
-<img src="https://github.com/user-attachments/assets/1a471488-59cc-425b-8345-5245c7efbcef" alt="The Shorthand Guide to Everything Claude Code" />
+<a href="https://x.com/xuxinchao007-prog/status/2012378465664745795">
+<img src="https://github.com/user-attachments/assets/1a471488-59cc-425b-8345-5245c7efbcef" alt="The Shorthand Guide to BGYFW Spect Code" />
 </a>
 </td>
 <td width="50%">
-<a href="https://x.com/affaanmustafa/status/2014040193557471352">
-<img src="https://github.com/user-attachments/assets/c9ca43bc-b149-427f-b551-af6840c368f0" alt="The Longform Guide to Everything Claude Code" />
+<a href="https://x.com/xuxinchao007-prog/status/2014040193557471352">
+<img src="https://github.com/user-attachments/assets/c9ca43bc-b149-427f-b551-af6840c368f0" alt="The Longform Guide to BGYFW Spect Code" />
 </a>
 </td>
 </tr>
@@ -250,7 +250,7 @@ everything-claude-code/
 
 ```bash
 # 将此仓库添加为市场
-/plugin marketplace add affaan-m/everything-claude-code
+/plugin marketplace add xuxinchao007-prog/bgyfw-spect-code
 
 # 安装插件
 /plugin install everything-claude-code@everything-claude-code
@@ -264,7 +264,7 @@ everything-claude-code/
     "everything-claude-code": {
       "source": {
         "source": "github",
-        "repo": "affaan-m/everything-claude-code"
+        "repo": "xuxinchao007-prog/bgyfw-spect-code"
       }
     }
   },
@@ -280,7 +280,7 @@ everything-claude-code/
 >
 > ```bash
 > # 首先克隆仓库
-> git clone https://github.com/affaan-m/everything-claude-code.git
+> git clone https://github.com/xuxinchao007-prog/bgyfw-spect-code.git
 >
 > # 选项 A：用户级规则（应用于所有项目）
 > cp -r everything-claude-code/rules/* ~/.claude/rules/
@@ -298,7 +298,7 @@ everything-claude-code/
 
 ```bash
 # 克隆仓库
-git clone https://github.com/affaan-m/everything-claude-code.git
+git clone https://github.com/xuxinchao007-prog/bgyfw-spect-code.git
 
 # 将代理复制到你的 Claude 配置
 cp everything-claude-code/agents/*.md ~/.claude/agents/
@@ -454,15 +454,15 @@ node tests/hooks/hooks.test.js
 
 ## Star 历史
 
-[![Star History Chart](https://api.star-history.com/svg?repos=affaan-m/everything-claude-code&type=Date)](https://star-history.com/#affaan-m/everything-claude-code&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=xuxinchao007-prog/bgyfw-spect-code&type=Date)](https://star-history.com/#xuxinchao007-prog/bgyfw-spect-code&Date)
 
 ---
 
 ## 链接
 
-- **精简指南（从这里开始）：** [The Shorthand Guide to Everything Claude Code](https://x.com/affaanmustafa/status/2012378465664745795)
-- **详细指南（高级）：** [The Longform Guide to Everything Claude Code](https://x.com/affaanmustafa/status/2014040193557471352)
-- **关注：** [@affaanmustafa](https://x.com/affaanmustafa)
+- **精简指南（从这里开始）：** [The Shorthand Guide to BGYFW Spect Code](https://x.com/xuxinchao007-prog/status/2012378465664745795)
+- **详细指南（高级）：** [The Longform Guide to BGYFW Spect Code](https://x.com/xuxinchao007-prog/status/2014040193557471352)
+- **关注：** [@xuxinchao007-prog](https://x.com/xuxinchao007-prog)
 - **zenith.chat:** [zenith.chat](https://zenith.chat)
 
 ---

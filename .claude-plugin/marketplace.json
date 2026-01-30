@@ -1,24 +1,26 @@
 {
-  "name": "everything-claude-code",
+  "name": "bgyfw-spect-code",
   "owner": {
-    "name": "Affaan Mustafa",
-    "email": "affaan@example.com"
+    "name": "xuxinchao007-prog",
+    "email": "xuxinchao01@bgyfw.com"
   },
   "metadata": {
-    "description": "Battle-tested Claude Code configurations from an Anthropic hackathon winner"
+    "description": "Complete collection of battle-tested Claude Code configs with language-specific agents for Java, Python, JavaScript, Vue and database specialists",
+    "version": "1.3.0"
   },
   "plugins": [
     {
-      "name": "everything-claude-code",
+      "name": "bgyfw-spect-code",
       "source": "./",
-      "description": "Complete collection of agents, skills, hooks, commands, and rules evolved over 10+ months of intensive daily use",
+      "description": "Complete collection of agents, skills, hooks, commands, and rules evolved over 10+ months. Now with 27 agents including language-specific reviewers for Java, Python, JavaScript, Vue and database specialists for PostgreSQL, MySQL, MongoDB, Oracle, SQL Server.",
       "author": {
-        "name": "Affaan Mustafa"
+        "name": "xuxinchao007-prog"
       },
-      "homepage": "https://github.com/affaan-m/everything-claude-code",
-      "repository": "https://github.com/affaan-m/everything-claude-code",
+      "homepage": "https://github.com/xuxinchao007-prog/bgyfw-spect-code",
+      "repository": "https://github.com/xuxinchao007-prog/bgyfw-spect-code",
       "license": "MIT",
       "keywords": [
+        "claude-code",
         "agents",
         "skills",
         "hooks",
@@ -26,7 +28,16 @@
         "tdd",
         "code-review",
         "security",
-        "best-practices"
+        "best-practices",
+        "java",
+        "python",
+        "javascript",
+        "typescript",
+        "vue",
+        "database",
+        "performance",
+        "workflow",
+        "automation"
       ],
       "category": "workflow",
       "tags": [
@@ -37,6 +48,13 @@
         "tdd",
         "code-review",
         "security",
+        "java",
+        "python",
+        "javascript",
+        "typescript",
+        "vue",
+        "database",
+        "performance",
         "best-practices"
       ]
     }

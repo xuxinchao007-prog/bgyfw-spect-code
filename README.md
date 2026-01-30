@@ -1,8 +1,8 @@
-**Language:** English | [繁體中文](docs/zh-TW/README.md)
+**Language:** English | [繁體中文](docs/zh-TW/README.md) | [简体中文](README.zh-CN.md)
 
-# Everything Claude Code
+# BGYFW Spect Code
 
-[![Stars](https://img.shields.io/github/stars/affaan-m/everything-claude-code?style=flat)](https://github.com/affaan-m/everything-claude-code/stargazers)
+[![Stars](https://img.shields.io/github/stars/xuxinchao007-prog/bgyfw-spect-code?style=flat)](https://github.com/xuxinchao007-prog/bgyfw-spect-code/stargazers)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 ![Shell](https://img.shields.io/badge/-Shell-4EAA25?logo=gnu-bash&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?logo=typescript&logoColor=white)
@@ -14,34 +14,70 @@
   <a href="README.zh-CN.md">简体中文</a>
 </p>
 
-**The complete collection of Claude Code configs from an Anthropic hackathon winner.**
+**A complete collection of Claude Code configurations with 27 specialized agents.**
 
-Production-ready agents, skills, hooks, commands, rules, and MCP configurations evolved over 10+ months of intensive daily use building real products.
+Production-ready agents, skills, hooks, commands, rules, and MCP configurations including language-specific reviewers for Java, Python, JavaScript, Vue and database specialists for PostgreSQL, MySQL, MongoDB, Oracle, SQL Server.
 
 ---
 
-## The Guides
+## Features
 
-This repo is the raw code only. The guides explain everything.
+### Language-Specific Agents (MANDATORY)
+- **java-reviewer**: Expert Java code review (concurrency, exceptions, Spring)
+- **python-reviewer**: Expert Python code review (PEP 8, async, Django/FastAPI)
+- **javascript-reviewer**: JavaScript/TypeScript review (ES6+, React, Vue)
+- **vue-reviewer**: Vue.js specialist (Composition API, reactivity)
+- **go-reviewer**: Go code review (idiomatic patterns, goroutines)
 
-<table>
-<tr>
-<td width="50%">
-<a href="https://x.com/affaanmustafa/status/2012378465664745795">
-<img src="https://github.com/user-attachments/assets/1a471488-59cc-425b-8345-5245c7efbcef" alt="The Shorthand Guide to Everything Claude Code" />
-</a>
-</td>
-<td width="50%">
-<a href="https://x.com/affaanmustafa/status/2014040193557471352">
-<img src="https://github.com/user-attachments/assets/c9ca43bc-b149-427f-b551-af6840c368f0" alt="The Longform Guide to Everything Claude Code" />
-</a>
-</td>
-</tr>
-<tr>
-<td align="center"><b>Shorthand Guide</b><br/>Setup, foundations, philosophy. <b>Read this first.</b></td>
-<td align="center"><b>Longform Guide</b><br/>Token optimization, memory persistence, evals, parallelization.</td>
-</tr>
-</table>
+### Database Specialists
+- **db-postgresql-reviewer**: PostgreSQL query optimization
+- **db-mysql-reviewer**: MySQL query optimization
+- **db-mongo-reviewer**: MongoDB aggregation and indexing
+- **db-oracle-reviewer**: Oracle/PLSQL optimization
+- **db-sqlserver-reviewer**: SQL Server T-SQL optimization
+
+### Code Quality Agents
+- **performance-auditor**: Frontend performance (Lighthouse, Core Web Vitals)
+- **smell-detector**: Code smell detection and refactoring guidance
+- **security-reviewer**: Security analysis (OWASP Top 10)
+- **tdd-guide**: Test-driven development workflow
+
+---
+
+## Quick Start
+
+### Installation
+
+```bash
+# Add this repo as a marketplace
+/plugin marketplace add xuxinchao007-prog/bgyfw-spect-code
+
+# Install the plugin
+/plugin install bgyfw-spect-code@bgyfw-spect-code
+```
+
+### Manual Setup
+
+```bash
+# Clone the repo
+git clone https://github.com/xuxinchao007-prog/bgyfw-spect-code.git
+
+# Copy rules
+cp -r bgyfw-spect-code/rules/* ~/.claude/rules/
+```
+
+---
+
+## Documentation
+
+See the original guides for detailed information:
+
+- [Shorthand Guide](https://x.com/affaanmustafa/status/2012378465664745795) - Setup, foundations, philosophy
+- [Longform Guide](https://x.com/affaanmustafa/status/2014040193557471352) - Token optimization, memory persistence, evals
+
+---
+
+## What's Inside
 
 | Topic | What You'll Learn |
 |-------|-------------------|
@@ -279,10 +315,10 @@ The easiest way to use this repo - install as a Claude Code plugin:
 
 ```bash
 # Add this repo as a marketplace
-/plugin marketplace add affaan-m/everything-claude-code
+/plugin marketplace add xuxinchao007-prog/bgyfw-spect-code
 
 # Install the plugin
-/plugin install everything-claude-code@everything-claude-code
+/plugin install bgyfw-spect-code@bgyfw-spect-code
 ```
 
 Or add directly to your `~/.claude/settings.json`:
@@ -290,15 +326,15 @@ Or add directly to your `~/.claude/settings.json`:
 ```json
 {
   "extraKnownMarketplaces": {
-    "everything-claude-code": {
+    "bgyfw-spect-code": {
       "source": {
         "source": "github",
-        "repo": "affaan-m/everything-claude-code"
+        "repo": "xuxinchao007-prog/bgyfw-spect-code"
       }
     }
   },
   "enabledPlugins": {
-    "everything-claude-code@everything-claude-code": true
+    "bgyfw-spect-code@bgyfw-spect-code": true
   }
 }
 ```
@@ -309,14 +345,14 @@ This gives you instant access to all commands, agents, skills, and hooks.
 >
 > ```bash
 > # Clone the repo first
-> git clone https://github.com/affaan-m/everything-claude-code.git
+> git clone https://github.com/xuxinchao007-prog/bgyfw-spect-code.git
 >
 > # Option A: User-level rules (applies to all projects)
-> cp -r everything-claude-code/rules/* ~/.claude/rules/
+> cp -r bgyfw-spect-code/rules/* ~/.claude/rules/
 >
 > # Option B: Project-level rules (applies to current project only)
 > mkdir -p .claude/rules
-> cp -r everything-claude-code/rules/* .claude/rules/
+> cp -r bgyfw-spect-code/rules/* .claude/rules/
 > ```
 
 ---
@@ -327,19 +363,19 @@ If you prefer manual control over what's installed:
 
 ```bash
 # Clone the repo
-git clone https://github.com/affaan-m/everything-claude-code.git
+git clone https://github.com/xuxinchao007-prog/bgyfw-spect-code.git
 
 # Copy agents to your Claude config
-cp everything-claude-code/agents/*.md ~/.claude/agents/
+cp bgyfw-spect-code/agents/*.md ~/.claude/agents/
 
 # Copy rules
-cp everything-claude-code/rules/*.md ~/.claude/rules/
+cp bgyfw-spect-code/rules/*.md ~/.claude/rules/
 
 # Copy commands
-cp everything-claude-code/commands/*.md ~/.claude/commands/
+cp bgyfw-spect-code/commands/*.md ~/.claude/commands/
 
 # Copy skills
-cp -r everything-claude-code/skills/* ~/.claude/skills/
+cp -r bgyfw-spect-code/skills/* ~/.claude/skills/
 ```
 
 #### Add hooks to settings.json
@@ -452,9 +488,9 @@ Please contribute! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ## Background
 
-I've been using Claude Code since the experimental rollout. Won the Anthropic x Forum Ventures hackathon in Sep 2025 building [zenith.chat](https://zenith.chat) with [@DRodriguezFX](https://x.com/DRodriguezFX) - entirely using Claude Code.
+This project is based on the excellent work by [Affaan Mustafa](https://github.com/affaan-m) and has been adapted and extended with additional language-specific agents and database specialists.
 
-These configs are battle-tested across multiple production applications.
+The original configurations are battle-tested across multiple production applications.
 
 ---
 
@@ -483,16 +519,16 @@ These configs work for my workflow. You should:
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=affaan-m/everything-claude-code&type=Date)](https://star-history.com/#affaan-m/everything-claude-code&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=xuxinchao007-prog/bgyfw-spect-code&type=Date)](https://star-history.com/#xuxinchao007-prog/bgyfw-spect-code&Date)
 
 ---
 
 ## Links
 
+- **Original Project:** [affaan-m/everything-claude-code](https://github.com/affaan-m/everything-claude-code)
 - **Shorthand Guide (Start Here):** [The Shorthand Guide to Everything Claude Code](https://x.com/affaanmustafa/status/2012378465664745795)
 - **Longform Guide (Advanced):** [The Longform Guide to Everything Claude Code](https://x.com/affaanmustafa/status/2014040193557471352)
-- **Follow:** [@affaanmustafa](https://x.com/affaanmustafa)
-- **zenith.chat:** [zenith.chat](https://zenith.chat)
+- **Repository:** [xuxinchao007-prog/bgyfw-spect-code](https://github.com/xuxinchao007-prog/bgyfw-spect-code)
 
 ---
 
@@ -502,4 +538,4 @@ MIT - Use freely, modify as needed, contribute back if you can.
 
 ---
 
-**Star this repo if it helps. Read both guides. Build something great.**
+**Based on [everything-claude-code](https://github.com/affaan-m/everything-claude-code) by [Affaan Mustafa](https://github.com/affaan-m)**
