@@ -22,25 +22,40 @@ Production-ready agents, skills, hooks, commands, rules, and MCP configurations 
 
 ## Features
 
-### Language-Specific Agents (MANDATORY)
-- **java-reviewer**: Expert Java code review (concurrency, exceptions, Spring)
+### Core Agents (8)
+- **architect**: System design and architecture decisions
+- **planner**: Feature implementation planning
+- **code-reviewer**: General code quality and security review
+- **security-reviewer**: Vulnerability analysis (OWASP Top 10)
+- **tdd-guide**: Test-driven development workflow
+- **e2e-runner**: Playwright E2E testing
+- **refactor-cleaner**: Dead code cleanup
+- **doc-updater**: Documentation and codemap updates
+
+### Language-Specific Agents (10)
+- **java-reviewer**: Expert Java code review (concurrency, Spring, Jakarta)
+- **java-build-resolver**: Java Maven/Gradle build fixes
 - **python-reviewer**: Expert Python code review (PEP 8, async, Django/FastAPI)
+- **python-build-resolver**: Python pip/build dependency fixes
 - **javascript-reviewer**: JavaScript/TypeScript review (ES6+, React, Vue)
+- **javascript-build-resolver**: JS/TS npm/yarn/pnpm bundler fixes
 - **vue-reviewer**: Vue.js specialist (Composition API, reactivity)
 - **go-reviewer**: Go code review (idiomatic patterns, goroutines)
+- **go-build-resolver**: Go build, vet, and linter fixes
+- **refactor-cleaner-java**: Java dead code cleanup (SpotBugs, PMD)
 
-### Database Specialists
+### Database Specialists (6)
+- **database-reviewer**: General database review
 - **db-postgresql-reviewer**: PostgreSQL query optimization
-- **db-mysql-reviewer**: MySQL query optimization
+- **db-mysql-reviewer**: MySQL 8.0+ query optimization
 - **db-mongo-reviewer**: MongoDB aggregation and indexing
 - **db-oracle-reviewer**: Oracle/PLSQL optimization
 - **db-sqlserver-reviewer**: SQL Server T-SQL optimization
 
-### Code Quality Agents
+### Code Quality Agents (3)
 - **performance-auditor**: Frontend performance (Lighthouse, Core Web Vitals)
 - **smell-detector**: Code smell detection and refactoring guidance
-- **security-reviewer**: Security analysis (OWASP Top 10)
-- **tdd-guide**: Test-driven development workflow
+- **build-error-resolver**: General build error resolution
 
 ---
 
@@ -130,102 +145,146 @@ Or use the `/setup-pm` command in Claude Code.
 This repo is a **Claude Code plugin** - install it directly or copy components manually.
 
 ```
-everything-claude-code/
+bgyfw-spect-code/
 |-- .claude-plugin/   # Plugin and marketplace manifests
 |   |-- plugin.json         # Plugin metadata and component paths
 |   |-- marketplace.json    # Marketplace catalog for /plugin marketplace add
 |
-|-- agents/           # Specialized subagents for delegation
-|   |-- planner.md           # Feature implementation planning
-|   |-- architect.md         # System design decisions
-|   |-- tdd-guide.md         # Test-driven development
-|   |-- code-reviewer.md     # Quality and security review
-|   |-- security-reviewer.md # Vulnerability analysis
-|   |-- build-error-resolver.md
-|   |-- e2e-runner.md        # Playwright E2E testing
-|   |-- refactor-cleaner.md  # Dead code cleanup
-|   |-- doc-updater.md       # Documentation sync
-|   |-- go-reviewer.md       # Go code review (NEW)
-|   |-- go-build-resolver.md # Go build error resolution (NEW)
+|-- agents/           # 27 specialized subagents for delegation
+|   |-- architect.md              # System design and architecture decisions
+|   |-- planner.md                # Feature implementation planning
+|   |-- code-reviewer.md          # General code quality review
+|   |-- security-reviewer.md      # Vulnerability analysis (OWASP Top 10)
+|   |-- tdd-guide.md              # Test-driven development workflow
+|   |-- build-error-resolver.md   # General build error resolution
+|   |-- e2e-runner.md             # Playwright E2E testing
+|   |-- refactor-cleaner.md       # Dead code cleanup
+|   |-- refactor-cleaner-java.md  # Java dead code cleanup
+|   |-- doc-updater.md            # Documentation and codemap updates
+|   |-- smell-detector.md         # Code smell detection
+|   |-- database-reviewer.md      # General database review
+|   |
+|   |-- Language-Specific Reviewers:
+|   |   |-- java-reviewer.md           # Java (concurrency, Spring, Jakarta)
+|   |   |-- java-build-resolver.md     # Java Maven/Gradile build fixes
+|   |   |-- python-reviewer.md         # Python (PEP 8, async, Django/FastAPI)
+|   |   |-- python-build-resolver.md   # Python pip/build fixes
+|   |   |-- javascript-reviewer.md     # JavaScript/TypeScript (ES6+, React)
+|   |   |-- javascript-build-resolver.md# JS/TS npm/bundler build fixes
+|   |   |-- vue-reviewer.md            # Vue.js (Composition API, reactivity)
+|   |   |-- go-reviewer.md             # Go (idiomatic patterns, goroutines)
+|   |   |-- go-build-resolver.md       # Go build/vet/linter fixes
+|   |
+|   |-- Database Specialists:
+|       |-- db-postgresql-reviewer.md  # PostgreSQL optimization
+|       |-- db-mysql-reviewer.md       # MySQL 8.0+ optimization
+|       |-- db-mongo-reviewer.md       # MongoDB aggregation and indexing
+|       |-- db-oracle-reviewer.md      # Oracle/PLSQL optimization
+|       |-- db-sqlserver-reviewer.md   # SQL Server T-SQL optimization
 |
 |-- skills/           # Workflow definitions and domain knowledge
-|   |-- coding-standards/           # Language best practices
+|   |-- brainstorming/              # MUST use before creative work
+|   |-- coding-standards/           # Universal coding best practices
 |   |-- backend-patterns/           # API, database, caching patterns
-|   |-- frontend-patterns/          # React, Next.js patterns
-|   |-- continuous-learning/        # Auto-extract patterns from sessions (Longform Guide)
-|   |-- continuous-learning-v2/     # Instinct-based learning with confidence scoring
-|   |-- iterative-retrieval/        # Progressive context refinement for subagents
-|   |-- strategic-compact/          # Manual compaction suggestions (Longform Guide)
+|   |-- frontend-patterns/          # React/Next.js and Vue 3/Nuxt.js patterns
+|   |-- continuous-learning/        # Auto-extract patterns from sessions
+|   |-- continuous-learning-v2/     # Instinct-based learning with confidence
+|   |-- iterative-retrieval/        # Progressive context refinement
+|   |-- strategic-compact/          # Manual compaction suggestions
 |   |-- tdd-workflow/               # TDD methodology
 |   |-- security-review/            # Security checklist
-|   |-- eval-harness/               # Verification loop evaluation (Longform Guide)
-|   |-- verification-loop/          # Continuous verification (Longform Guide)
-|   |-- golang-patterns/            # Go idioms and best practices (NEW)
-|   |-- golang-testing/             # Go testing patterns, TDD, benchmarks (NEW)
+|   |-- eval-harness/               # Verification loop evaluation
+|   |-- verification-loop/          # Continuous verification
+|   |-- finishing-a-development-branch/ # Development completion workflow
+|   |-- using-git-worktrees/        # Git worktree isolation
+|   |
+|   |-- Language Patterns:
+|   |   |-- java-patterns/          # Java 17+ idioms and best practices
+|   |   |-- java-testing/           # JUnit 5, AssertJ, Mockito patterns
+|   |   |-- golang-patterns/        # Go idioms and best practices
+|   |   |-- golang-testing/         # Go TDD, benchmarks, fuzzing
+|   |   |-- python-patterns/        # Python best practices (via python-review)
+|   |   |-- javascript-patterns/    # JS/TS patterns (via js-review)
+|   |
+|   |-- Database Patterns:
+|       |-- postgres-patterns/      # PostgreSQL optimization
+|       |-- mysql-patterns/         # MySQL 8.0+ optimization
+|       |-- mongodb-patterns/       # MongoDB query optimization
+|       |-- redis-patterns/         # Redis caching patterns
+|       |-- influxdb-patterns/      # InfluxDB time-series patterns
+|       |-- clickhouse-io/          # ClickHouse analytics patterns
 |
-|-- commands/         # Slash commands for quick execution
-|   |-- tdd.md              # /tdd - Test-driven development
-|   |-- plan.md             # /plan - Implementation planning
-|   |-- e2e.md              # /e2e - E2E test generation
-|   |-- code-review.md      # /code-review - Quality review
-|   |-- build-fix.md        # /build-fix - Fix build errors
-|   |-- refactor-clean.md   # /refactor-clean - Dead code removal
-|   |-- learn.md            # /learn - Extract patterns mid-session (Longform Guide)
-|   |-- checkpoint.md       # /checkpoint - Save verification state (Longform Guide)
-|   |-- verify.md           # /verify - Run verification loop (Longform Guide)
-|   |-- setup-pm.md         # /setup-pm - Configure package manager
-|   |-- go-review.md        # /go-review - Go code review (NEW)
-|   |-- go-test.md          # /go-test - Go TDD workflow (NEW)
-|   |-- go-build.md         # /go-build - Fix Go build errors (NEW)
-|   |-- skill-create.md     # /skill-create - Generate skills from git history (NEW)
-|   |-- instinct-status.md  # /instinct-status - View learned instincts (NEW)
-|   |-- instinct-import.md  # /instinct-import - Import instincts (NEW)
-|   |-- instinct-export.md  # /instinct-export - Export instincts (NEW)
-|   |-- evolve.md           # /evolve - Cluster instincts into skills (NEW)
+|-- commands/         # 28 slash commands for quick execution
+|   |-- plan.md                # /plan - Implementation planning
+|   |-- tdd.md                 # /tdd - Test-driven development
+|   |-- code-review.md         # /code-review - Quality review
+|   |-- build-fix.md           # /build-fix - Fix build errors
+|   |-- refactor-clean.md      # /refactor-clean - Dead code removal
+|   |-- e2e.md                 # /e2e - E2E test generation
+|   |-- smell-detect.md        # /smell-detect - Code smell detection
+|   |-- performance.md         # /performance - Frontend performance audit
+|   |-- learn.md               # /learn - Extract patterns mid-session
+|   |-- checkpoint.md          # /checkpoint - Save verification state
+|   |-- verify.md              # /verify - Run verification loop
+|   |-- eval.md                # /eval - Evaluation harness
+|   |-- test-coverage.md       # /test-coverage - Coverage check
+|   |-- orchestrate.md         # /orchestrate - Parallel agent dispatch
+|   |-- setup-pm.md            # /setup-pm - Configure package manager
+|   |
+|   |-- Language Reviews:
+|   |   |-- java-review.md     # /java-review - Java code review
+|   |   |-- python-review.md   # /python-review - Python code review
+|   |   |-- js-review.md       # /js-review - JavaScript/TypeScript review
+|   |   |-- go-review.md       # /go-review - Go code review
+|   |   |-- go-test.md         # /go-test - Go TDD workflow
+|   |   |-- go-build.md        # /go-build - Fix Go build errors
+|   |
+|   |-- Continuous Learning:
+|       |-- skill-create.md        # /skill-create - Generate skills
+|       |-- instinct-status.md     # /instinct-status - View instincts
+|       |-- instinct-import.md     # /instinct-import - Import instincts
+|       |-- instinct-export.md     # /instinct-export - Export instincts
+|       |-- evolve.md              # /evolve - Cluster instincts
+|       |-- update-codemaps.md     # /update-codemaps - Update codemaps
+|       |-- update-docs.md         # /update-docs - Update documentation
 |
 |-- rules/            # Always-follow guidelines (copy to ~/.claude/rules/)
+|   |-- agents.md           # When to delegate to subagents
 |   |-- security.md         # Mandatory security checks
 |   |-- coding-style.md     # Immutability, file organization
 |   |-- testing.md          # TDD, 80% coverage requirement
 |   |-- git-workflow.md     # Commit format, PR process
-|   |-- agents.md           # When to delegate to subagents
+|   |-- hooks.md            # Hook configuration guidelines
+|   |-- patterns.md         # Pattern extraction guidelines
 |   |-- performance.md      # Model selection, context management
 |
 |-- hooks/            # Trigger-based automations
-|   |-- hooks.json                # All hooks config (PreToolUse, PostToolUse, Stop, etc.)
-|   |-- memory-persistence/       # Session lifecycle hooks (Longform Guide)
-|   |-- strategic-compact/        # Compaction suggestions (Longform Guide)
+|   |-- hooks.json                # All hooks config
+|   |-- memory-persistence/       # Session lifecycle hooks
+|   |-- strategic-compact/        # Compaction suggestions
 |
-|-- scripts/          # Cross-platform Node.js scripts (NEW)
+|-- scripts/          # Cross-platform Node.js scripts
 |   |-- lib/                     # Shared utilities
-|   |   |-- utils.js             # Cross-platform file/path/system utilities
-|   |   |-- package-manager.js   # Package manager detection and selection
 |   |-- hooks/                   # Hook implementations
-|   |   |-- session-start.js     # Load context on session start
-|   |   |-- session-end.js       # Save state on session end
-|   |   |-- pre-compact.js       # Pre-compaction state saving
-|   |   |-- suggest-compact.js   # Strategic compaction suggestions
-|   |   |-- evaluate-session.js  # Extract patterns from sessions
-|   |-- setup-package-manager.js # Interactive PM setup
+|   |-- setup-package-manager.js # Package manager setup
 |
-|-- tests/            # Test suite (NEW)
+|-- tests/            # Test suite
 |   |-- lib/                     # Library tests
 |   |-- hooks/                   # Hook tests
 |   |-- run-all.js               # Run all tests
 |
-|-- contexts/         # Dynamic system prompt injection contexts (Longform Guide)
+|-- contexts/         # Dynamic system prompt injection contexts
 |   |-- dev.md              # Development mode context
 |   |-- review.md           # Code review mode context
 |   |-- research.md         # Research/exploration mode context
 |
-|-- examples/         # Example configurations and sessions
+|-- examples/         # Example configurations
 |   |-- CLAUDE.md           # Example project-level config
-|   |-- user-CLAUDE.md      # Example user-level config
 |
 |-- mcp-configs/      # MCP server configurations
-|   |-- mcp-servers.json    # GitHub, Supabase, Vercel, Railway, etc.
+|   |-- mcp-servers.json    # GitHub, Supabase, Vercel, etc.
 |
-|-- marketplace.json  # Self-hosted marketplace config (for /plugin marketplace add)
+|-- marketplace.json  # Self-hosted marketplace config
 ```
 
 ---
